@@ -6,14 +6,17 @@ class Solution:
         right = n-1
         count = 0
         target = skill[left] + skill[right]
-        while right > left:
-            if skill[left] + skill[right] == target:
-                count+= skill[left] * skill[right]
-                left += 1
-                right -= 1
-            else:
-                count = -1
-                break
+        if n%2 != 0:
+            return -1
+        else:
+            while right > left:
+                if skill[left] + skill[right] == target:
+                    count+= skill[left] * skill[right]
+                    left += 1
+                    right -= 1
+                else:
+                    count = -1
+                    break
         return count
                     
             
